@@ -1,0 +1,106 @@
+* {
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
+}
+
+html {
+	height: 100%;
+	background: radial-gradient(circle, #fff 20%, #ccc);
+	background-size: cover;
+}
+
+#calculator {
+	width: 325px;
+	height: auto;
+	margin: 10px auto;
+	padding: 20px 20px 9px;
+	background: linear-gradient(#9dd2ea, #8bceec);
+	border-radius: 3px;
+}
+
+.top .clear {
+	float: left;
+}
+
+.top .screen {
+	height: 40px;
+	width: 212px;
+	float: right;
+	padding: 0 10px;
+	border-radius: 3px;
+	background: rgba(0, 0, 0, 0.2);
+	font-size: 17px;
+	line-height: 40px;
+	color: white;
+	text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.2);
+	text-align: right;
+}
+
+.number, .top {
+	overflow: hidden;
+}
+
+.number span, .top span.clear {
+	float: left;
+	position: relative;
+	cursor: pointer;
+	width: 66px;
+	height: 40px;
+	background: #fff;
+	border: 1px solid #8bceec;
+	border-radius: 3px;
+	margin: 0 7px 11px 0;
+	line-height: 40px;
+	text-align: center;
+	transition: all 0.2s ease;
+}
+
+span.operator {
+	margin-right: 0;
+}
+
+.number span.operator {
+	background: #FFF0F5;
+	margin-right: 0;
+}
+
+.number span.equal {
+	background: #f1ff92;
+	color: #888e5f;
+}
+
+.top span.clear {
+	background: #ff9fa8;
+	color: #fff;
+}
+
+.number span:hover {
+	background: #9c89f6;
+	color: white;
+}
+
+.number span.eval:hover {
+	background: #abb850;
+	color: #ffffff;
+}
+
+.top span.clear:hover {
+	background: #d3545d;
+	color: white;
+}
+
+.number span:active {
+	box-shadow: 0 0 #6b54d3;
+	top: 4px;
+}
+
+.number span.eval:active {
+	box-shadow: 0 0 #717a33;
+	top: 4px;
+}
+
+.top span.clear:active {
+	top: 4px;
+	box-shadow: 0 0 #d3545d;
+}
