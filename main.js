@@ -2,7 +2,6 @@
 
 var number = document.querySelectorAll('#calculator span');
 var operators = ['+', '-', 'x', '/'];
-var decimalAdded = false;
 
 for(var i = 0; i < number.length; i++) {
     number[i].onclick = function(e) {
@@ -12,21 +11,15 @@ for(var i = 0; i < number.length; i++) {
 
         if(btnVal == 'C') {
             input.innerHTML = '';
-            decimalAdded = false;
         }
          else if(btnVal == '=') {
              var equation = inputVal;
              var lastChar = equation[equation.length - 1];
 
-            equation = equation.replace(/x/g, '*');
-
-            if(operators.indexOf(lastChar) > -1 || lastChar == '.')
-                equation = equation.replace(/.$/, '');
+             equation = equation.replace(/x/g, '*');
 
              if(equation)
                  input.innerHTML = eval(equation);
-
-            decimalAdded = false;
          }
 
         else if(operators.indexOf(btnVal) > -1) {
@@ -36,24 +29,10 @@ for(var i = 0; i < number.length; i++) {
                 input.innerHTML += btnVal;
             else if(inputVal == '' && btnVal == '-')
                 input.innerHTML += btnVal;
-
-            if(operators.indexOf(lastChar) > -1 && inputVal.length > 1) {
-                input.innerHTML = inputVal.replace(/.$/, btnVal);
-            }
-            decimalAdded =false;
-        }
-
-        else if(btnVal == '.') {
-            if(!decimalAdded) {
-                input.innerHTML += btnVal;
-                decimalAdded = true;
-            }
         }
 
         else {
              input.innerHTML += btnVal;
          }
-
-        e.preventDefault();
     }
 }
