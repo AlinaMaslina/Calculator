@@ -12,15 +12,15 @@ for(var i = 0; i < number.length; i++) {
         if(btnVal == 'C') {
             input.innerHTML = '';
         }
-         else if(btnVal == '=') {
-             var equation = inputVal;
-             var lastChar = equation[equation.length - 1];
+        else if(btnVal == '=') {
+            var equation = inputVal;
+            var lastChar = equation[equation.length - 1];
 
-             equation = equation.replace(/x/g, '*');
+            equation = equation.replace(/x/g, '*');
 
-             if(equation)
-                 input.innerHTML = eval(equation);
-         }
+            if(equation)
+                input.innerHTML = eval(equation);
+        }
 
         else if(operators.indexOf(btnVal) > -1) {
             var lastChar = inputVal[inputVal.length - 1];
@@ -32,7 +32,7 @@ for(var i = 0; i < number.length; i++) {
         }
 
         else {
-             input.innerHTML += btnVal;
-         }
+            input.innerHTML += btnVal;
+        }
     }
 }
